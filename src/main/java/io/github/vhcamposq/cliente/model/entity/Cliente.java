@@ -1,14 +1,14 @@
 package io.github.vhcamposq.cliente.model.entity;
 
 import jakarta.persistence.*;
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDate;
 
 @Entity
-@Getter
-@Setter
+@Data
 public class Cliente {
 
     @Id
@@ -18,12 +18,8 @@ public class Cliente {
     private String nome;
     @Column(nullable = false, length = 11)
     private String cpf;
-    @Column
+    @Column(name = "data_cadastro")
     private LocalDate dataCadastro;
 
-    public static void main(String[] args) {
-        Cliente C = new Cliente();
-        C.getId();
-    }
 
 }
