@@ -11,13 +11,6 @@ import org.springframework.context.annotation.Bean;
 @SpringBootApplication
 public class ClienteApplication {
 
-	@Bean
-	public CommandLineRunner run(@Autowired ClienteRepository repository){
-		return args -> {
-			Cliente cliente = Cliente.builder().cpf("00000000000").nome("Fulano").build();
-			repository.save(cliente);
-		};
-	}
 
 	public static void main(String[] args) {
 		SpringApplication.run(ClienteApplication.class, args);
