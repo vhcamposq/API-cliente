@@ -1,11 +1,15 @@
 package io.github.vhcamposq.cliente.model.entity;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.time.LocalDate;
 
 @Entity
-public class cliente {
+@Getter
+@Setter
+public class Cliente {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,5 +20,10 @@ public class cliente {
     private String cpf;
     @Column
     private LocalDate dataCadastro;
-    
+
+    public static void main(String[] args) {
+        Cliente C = new Cliente();
+        C.getId();
+    }
+
 }
