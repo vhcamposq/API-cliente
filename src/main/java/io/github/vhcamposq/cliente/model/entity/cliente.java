@@ -16,4 +16,5 @@ public class cliente {
     private String cpf;
     @Column
     private LocalDate dataCadastro;
+    
 }
