@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import lombok.*;
+import org.hibernate.validator.constraints.br.CPF;
 
 import java.time.LocalDate;
 
@@ -19,11 +20,11 @@ public class Cliente {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @NotEmpty
+    @NotEmpty(message = "{campo.nome.obrigatorio}")
     @Column(nullable = false, length = 150)
     private String nome;
 
-    @NotNull
+    @NotNull(message = "{campo.cpf.obrigatorio}")
     @Column(nullable = false, length = 11)
     private String cpf;
 
